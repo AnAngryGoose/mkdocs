@@ -1,0 +1,69 @@
+site_name: Homelab
+
+
+theme:
+  name: material
+  features:
+    - navigation.top
+    - navigation.tracking
+    - navigation.tabs        # Top-level tabs
+    - navigation.sections    # Sidebar grouping
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy      # Copy button for code blocks
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette: 
+    # Optional: Switch to dark mode automatically
+    - scheme: slate 
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+extra_css:
+  - stylesheets/gruvbox.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+    
+
+# Your Topic-Based Structure
+nav:
+  - Home: index.md
+  - Guides:
+    - Filesystem: 
+      - Management: guides/filesystem/management.md
+      - SnapRAID: guides/filesystem/snapraid.md
+      - MergerFS: guides/filesystem/mergerfs.md
+    - Docker: 
+      - Overview: guides/docker/docker.md
+      - Cheat Sheet: guides/docker/cheatsheet.md
+    - Servarr:
+      - Radarr: guides/servarr/radarr.md
+      - Sonarr: guides/servarr/sonarr.md
+      - Prowlarr: guides/servarr/prowlarr.md
+      - qBittorrent: guides/servarr/qbittorrent.md
+    - git:
+      - Git Basics: guides/git/git.md
+  - Services:
+      - Pi-hole: 
+        - Overview: services/pihole/pihole.md
+        - Docker Compose: services/pihole/compose.md
+      - Omada: 
+        - Overview: services/omada/omada.md
+        - Docker Compose: services/omada/compose.md
+      - Tailscale: 
+        - Overview: services/tailscale/tailscale.md
+      - Obsidian LiveSync:
+        - Overview: services/obslivesync/obslivesync.md
+        - Docker Compose: services/obslivesync/compose.md
+      - Home Assistant:
+        - Overview: services/homeassisstant/homeassisstant.md
+        - Docker Compose: services/homeassisstant/compose.md

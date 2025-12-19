@@ -1,0 +1,87 @@
+/* docs/stylesheets/gruvbox.css */
+
+/* Target the "slate" (dark) color scheme */
+[data-md-color-scheme="slate"] {
+  
+  /* --- GRUVBOX PALETTE (Reference) ---
+     Dark0 (Hard):  #1d2021
+     Dark0 (Med):   #282828  <-- Main Background
+     Dark0 (Soft):  #32302f
+     Dark1:         #3c3836  <-- Cards/UI Elements
+     Dark2:         #504945
+     Dark3:         #665c54
+     Dark4:         #7c6f64
+     Gray:          #928374
+     Fg0:           #fbf1c7
+     Fg1:           #ebdbb2  <-- Main Text
+     Red:           #fb4934
+     Green:         #b8bb26
+     Yellow:        #fabd2f
+     Blue:          #83a598
+     Purple:        #d3869b
+     Aqua:          #8ec07c
+     Orange:        #fe8019
+  -------------------------------------- */
+
+  /* Global Hue (Optional: Tinting some alpha layers) */
+  --md-hue: 30; /* Orange-ish tint */
+
+  /* -- Base Colors -- */
+  /* Main background (Gruvbox Dark Medium) */
+  --md-default-bg-color: #282828;
+  
+  /* Paper/Card background (slightly lighter than main bg) */
+  --md-default-bg-color--light: #3c3836;
+  
+  /* Lighter UI elements (footers, etc) */
+  --md-default-bg-color--lighter: #504945;
+  
+  /* Lightest for hover states */
+  --md-default-bg-color--lightest: #665c54;
+
+  /* -- Text Colors -- */
+  /* Main Text (Gruvbox Fg1) */
+  --md-default-fg-color: #ebdbb2;
+  
+  /* Muted Text (Gruvbox Gray) */
+  --md-default-fg-color--light: #a89984;
+  --md-default-fg-color--lighter: #928374;
+  --md-default-fg-color--lightest: #7c6f64;
+
+  /* -- Primary & Accent Colors -- */
+  /* Using Gruvbox Green for Primary. Change #98971a to #689d6a (Aqua) or #cc241d (Red) if preferred */
+  --md-primary-fg-color: #98971a;
+  --md-primary-fg-color--light: #B8BB26; 
+  --md-primary-fg-color--dark:  #af3a03; 
+  --md-primary-bg-color: #ebdbb2;
+
+  /* Accent color (used for links/highlights) - Using Gruvbox Blue */
+  --md-accent-fg-color: #83a598;
+  --md-accent-fg-color--transparent: rgba(131, 165, 152, 0.1);
+  --md-accent-bg-color: #458588;
+
+  /* -- Code Blocks -- */
+  /* Dark0 Hard for code blocks to distinguish from main bg */
+  --md-code-bg-color: #1d2021;
+  --md-code-fg-color: #ebdbb2;
+
+  /* -- Admonitions (Note/Warning boxes) -- */
+  --md-admonition-bg-color: #32302f;
+
+  /* -- Tables -- */
+  --md-typeset-table-color: rgba(235, 219, 178, 0.12);
+  
+  /* -- Inputs & Search -- */
+  --md-inputs-bg-color: #32302f;
+}
+
+/* Syntax Highlighting Adjustments (Optional but recommended for consistency) */
+/* Override specific code highlighting tokens to match Gruvbox */
+[data-md-color-scheme="slate"] .highlight .hll { background-color: #504945; }
+[data-md-color-scheme="slate"] .highlight .c { color: #928374; font-style: italic; } /* Comment */
+[data-md-color-scheme="slate"] .highlight .k { color: #fb4934; } /* Keyword */
+[data-md-color-scheme="slate"] .highlight .n { color: #ebdbb2; } /* Name */
+[data-md-color-scheme="slate"] .highlight .o { color: #8ec07c; } /* Operator */
+[data-md-color-scheme="slate"] .highlight .p { color: #ebdbb2; } /* Punctuation */
+[data-md-color-scheme="slate"] .highlight .s { color: #b8bb26; } /* String */
+[data-md-color-scheme="slate"] .highlight .kt { color: #fabd2f; } /* Type */
