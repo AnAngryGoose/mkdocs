@@ -6,10 +6,10 @@ hide:
 
 <div class="hero-container">
 
-  <h1>Project Vanth</h1>
+  <h1>Homelab Docs</h1>
   
   <p>
-    Write your documentation in Markdown and create a professional static site in minutes.
+    Various guides/references for my projects.
   </p>
 
   <p>

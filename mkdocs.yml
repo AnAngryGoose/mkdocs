@@ -45,12 +45,14 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - attr_list
-    
 
 # Your Topic-Based Structure
 nav:
   - Home: index.md
   - Infrastructure:
+    - Getting Started: 
+      - PC Setup - App Server: infrastructure/gettingstarted/pcsetup.md
+      - PC Setup - NAS: infrastructure/gettingstarted/nassetup.md
     - Filesystem & Storage: 
       - Management: infrastructure/filesystem/management.md
       - SnapRAID: infrastructure/filesystem/snapraid.md
