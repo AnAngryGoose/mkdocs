@@ -13,7 +13,7 @@ hide:
   </p>
 
   <p>
-    <a href="setup/installation/" class="md-button md-button--primary">Get Started</a>
+    <a href="infrastructure/gettingstarted/pcsetup/" class="md-button md-button--primary">Get Started</a>
     
     <a href="https://github.com/AnAngryGoose" class="md-button">github</a>
   </p>
