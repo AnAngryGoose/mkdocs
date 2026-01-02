@@ -73,7 +73,7 @@ nav:
       - Omada: services/omada/omada.md
       - Tailscale: services/tailscale/tailscale.md
     - NGINX Proxy Manager:
-      - Overview: networking/npm/npmp.md
+      - Overview: networking/npm/npm.md
       - NPM & Pi-Hole: networking/npm/pihole.md
   - Monitoring: 
     - Beszel: monitoring/beszel.md
