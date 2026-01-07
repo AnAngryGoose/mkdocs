@@ -75,9 +75,9 @@ nav:
     - NGINX Proxy Manager: networking/npm/overview.md
     - NPM & Pi-Hole: networking/npm/pihole.md
   - Monitoring: 
-    - Homepage: monitoring/homepage.md
-    - Dozzle: monitoring/dozzle.md
-    - Uptime Kuma: monitoring/uptimekuma.md
+    #- Homepage: monitoring/homepage.md
+    #- Dozzle: monitoring/dozzle.md
+    #- Uptime Kuma: monitoring/uptimekuma.md
     - Beszel: monitoring/beszel.md
   - Home Assistant: services/homeassisstant/homeassisstant.md
   - Cloud Services: 
@@ -93,7 +93,7 @@ nav:
       - Prowlarr: services/servarr/prowlarr.md
     - qBittorrent: services/servarr/qbittorrent.md
   - Utilities: 
-    - BentoPDF: services/utilities/bentopdf.md
+   #- BentoPDF: services/utilities/bentopdf.md
     - convertx: services/utilities/convertx.md
     - Obsidian LiveSync: services/utilities/obslivesync.md
 
