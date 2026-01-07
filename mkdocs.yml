@@ -81,7 +81,7 @@ nav:
     - Beszel: monitoring/beszel.md
   - Home Assistant: services/homeassisstant/homeassisstant.md
   - Cloud Services: 
-    - Filebrowser: 
+   # - Filebrowser: 
     - Nextcloud: services/nextcloud/nextcloud.md
     - Immich: 
       - Overview: services/immich/immich.md
