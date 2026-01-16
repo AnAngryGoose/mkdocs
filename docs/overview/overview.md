@@ -3,7 +3,7 @@
 This is just a reference for all my project stuff. Most of this is just for personal reference and is a total work in progress but it may be useful to someone, who knows. 
 
 ## Current software 
-A list of self-hosted services and docker containers running in my homelab. Work in progress. 
+A list of self-hosted services and docker containers I've run/am running. I'm sure a lot is missing from this list, but other pages above have more than what is listed here.
 
 ## Table of Contents
 

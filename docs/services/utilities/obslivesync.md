@@ -5,7 +5,7 @@
 ---
 ## Overview
 
-This guide covers setting up a self-hosted synchronization backend for Obsidian using **CouchDB** and **Obsidian LiveSync**. This approach offers full control over data privacy and sync speed by hosting the database directly.
+This covers setting up a self-hosted synchronization backend for Obsidian using **CouchDB** and **Obsidian LiveSync**. I used the offical guide and it...did not go well, so here's an adjusted version 
 
 **Tailscale** is used to secure the connection, allowing devices to sync remotely without opening ports on the router or exposing the database to the public internet.
 

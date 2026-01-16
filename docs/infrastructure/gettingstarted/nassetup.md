@@ -235,7 +235,7 @@ sudo mount -a
 
 ---
 
-## 3. SnapRAID (The Protection)
+## 3. SnapRAID 
 
 SnapRAID calculates parity (like RAID 5) but does it on a schedule (Snapshot), not in real-time. Ideally suited for media servers where files rarely change.
 

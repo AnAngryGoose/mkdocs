@@ -9,7 +9,7 @@ hide:
   <h1>Homelab Docs</h1>
   
   <p>
-    Various guides/references for my projects.
+    Various guides/references for some self hosted projects.
   </p>
 
   <p>
