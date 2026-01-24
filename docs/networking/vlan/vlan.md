@@ -1,5 +1,11 @@
 # VLANs - OPNSense & Omada Controller
 
+[OPNSense Docs :simple-opnsense: ](https://docs.opnsense.org/manual/how-tos/vlan_and_lagg.html)
+
+[Zenarmor Tutorial :material-web: ](https://www.zenarmor.com/docs/network-security-tutorials/how-to-configure-vlan-on-opnsense)
+
+[Home Network Guy Youtube :material-youtube: ](https://www.youtube.com/watch?v=fPP4UE6IuRc)
+
 ---
 
 I am only using IPv4 for this guide. Not familiar enough with IPv6, and I don't feel like dealing with for now. I'll come around to it (maybe).
@@ -8,7 +14,7 @@ This is made for DNSMasq and Unbound DNS specifically, but same ideas apply if u
 
 ---
 
-## VLAN Creation and Structure
+## VLAN Structure
 
 I currently have my network setup as this:
 
@@ -39,10 +45,13 @@ You can set this however works for you.
     Devices: Random, new, unkown devices. 
 
 
-### Interfaces 
+## VLAN Creation in OPNSense 
 
+---
 
-**1**. **Go to Interfaces** > [WAN]
+### WAN Settings 
+
+**Go to Interfaces** > [WAN]
 
 * IPv4 Configuration Type = DHCP
 
@@ -50,51 +59,68 @@ This will allow your OPNSense router to be able to hand out DHCP addresses to th
 
 
 
-**2**. Go to **Interfaces > Devices > VLAN**. Configure each VLAN as:
+### Create a New VLAN
+
+Go to **Interfaces > Devices > VLAN**. Configure each VLAN as:
 
 !!!note
     
     I am using the management interface for the examples, same ideas apply for the others. 
-```
-* Device: [blank - will auto create name, can be custom if wanted.]
 
-* Parent: igb0 (12.34.56.mac.address) [LAN]
+* `Device`: [blank - will auto create name, can be custom if wanted.]
+
+* `Parent`: igb0 (12.34.56.mac.address) (physical interface that will carry traffic)
   
-  # Set this to whatever parent you want, usually highest throughput. 
+* `VLAN tag`: 10 
 
-* VLAN tag: 10 
+* `VLAN Priority:` Best effort (0, default) 
 
-* VLAN Priority: Best effort (0, default)
+* `Description:` MANAGEMENT (or whatever you want)
 
-* Description: MANAGEMENT (or whatever you want)
-```
 
 * **Repeat this for all other VLANs**
 
-**3**. Go to **Interface > Assignments**
+### Interface Assignment 
+
+ Go to **Interface > Assignments**
 
 * Assign each new VLAN (device).
 
 * Match the description name 
 
-**4**. Go to each new interface - **[MANAGMENT], [TRSUTED]. etc.**
+
+
+### VLAN IP Configuration Settings
+
+Go to each new interface - **[MANAGMENT], [TRSUTED]. etc.**
 
 * Enable each interface
 
 * Prevent interface removal 
 
-* IPv4 Configuration Type = Static IPv4.
+* IPv4 Configuration Type = **Static IPv4**
 
-* Static IPv4 Configuration 
+* Static IPv4 Configuration - this will assign the gateway IP address for your LAN. 
 
     * IPv4 Address = 10.10.10.1/24 (be sure to change this to /24).
+
+* (Usually for LAN/VLANs) leave **Block private networks** and **Block bogon networks unchecke**d. Enable them only on WAN-like interfaces.
 
 
 ## DHCP / DNS Settings 
 
+---
+
 ### DHCP
 
-**1**. Go to **Services >  Dnsmasq DNS & DHCP > DHCP Ranges**
+**1**. Go to **Services >  Dnsmasq DNS & DHCP > General**
+
+!!!important
+
+    Make sure the VLAN interfaces are selected uunder **Interface**.
+
+    
+**2**. Go to **Services >  Dnsmasq DNS & DHCP > DHCP Ranges**
 
 * Press the + button 
 
@@ -136,6 +162,8 @@ This will allow your OPNSense router to be able to hand out DHCP addresses to th
 
 
 ## Firewall Rules
+
+---
 
 !!!tip
 
@@ -235,6 +263,44 @@ Description: Allow DNS on MANAGMENT network
     **Repeat this for all other interfaces. Ensuring to change the selected net and addresses for each. For first rule, "private net" should be destination on all. You can clone the rules and make it faster.** 
 
 ## Switch Configuration - Omada Controller 
+
+### VLAN Profile Creation
+
+* Open the Omada Controller WebUI 
+
+* Go to **Settings > Wired and Wireless Networks > LAN**
+
+* Select Create New LAN 
+
+* Configure as:
+    * `Name`: VLAN Name 
+    * `Purpose`: VLAN
+    * `VLAN`: Enter the tag defined in your OPNSense configuration above
+    *  Other options availabe as needed for different configs are listed. 
+
+### VLAN assignment
+
+- Select **Devices** on sidebar
+- Select **Ports**
+    - Click the edit icon on the port you want to configure
+    - Set the profile to the VLAN profile created in Omada. 
+- This should be working correctly now. 
+
+## Testing
+
+---
+
+Testing confirms whether the VLAN works as expected before deploying it widely.
+
+1.  Connect a device (e.g., laptop or VM) to a switch port assigned to the VLAN.
+2.  Ensure it receives an IP address from the correct VLAN subnet.
+3.  Test connectivity (e.g., ping the gateway or browse the internet).
+4.  Verify that firewall rules are functioning as intended.
+This helps identify and fix any misconfigurations early.
+
+Linux - `ip a` should show newly assigned, correct, subnet
+
+Windows - `ipconfig` 
 
 
 
