@@ -65,6 +65,7 @@ nav:
       - MergerFS: infrastructure/filesystem/mergerfs.md
     - Docker: 
       - Overview: infrastructure/docker/docker.md
+      - Installing Docker on Debian: infrastructure/docker/dockerinstall.md
       - Cheat Sheet: infrastructure/docker/cheatsheet.md
     - git:
       - Git Basics: infrastructure/git/git.md
