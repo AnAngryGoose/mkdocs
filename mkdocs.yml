@@ -110,6 +110,7 @@ nav:
       - Sonarr: services/servarr/sonarr.md
       - Prowlarr: services/servarr/prowlarr.md
     - qBittorrent: services/servarr/qbittorrent.md
+    - Gluetun VPN: services/servarr/gluetun.md
 
 
   - Utilities: 
